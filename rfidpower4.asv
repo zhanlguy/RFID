@@ -103,14 +103,12 @@ PLMAP33 = phase2.*(signal3);
 MAP=[];
 for ii = 1:b
     for jj = 1:a
-        if D1(ii,jj) < D2(ii,jj)|| D1(ii,jj) < D3(ii,jj) 
+        if D1(ii,jj) < D2(ii,jj)
             DMap(ii,jj) = PLMAP1(ii,jj)./PLMAP3(ii,jj)+PLMAP2(ii,jj)+noise;
-            %OMap(ii,jj) = PLMAP11(ii,jj)./PLMAP22(ii,jj)+noise;
-        elseif D2(ii,jj) < D1(ii,jj)|| D2(ii,jj) < D3(ii,jj)
-            DMap(ii,jj) = PLMAP2(ii,jj)./PLMAP3(ii,jj)+PLMAP1(ii,jj)+noise;
-           % OMap(ii,jj) = PLMAP22(ii,jj)./PLMAP11(ii,jj)+noise;
-        elseif D3(ii,jj) < D2(ii,jj)|| D3(ii,jj) < D1(ii,jj)
-            DMap(ii,jj) = PLMAP3(ii,jj)./PLMAP2(ii,jj)+PLMAP1(ii,jj)+noise;
+            OMap(ii,jj) = PLMAP11(ii,jj)./PLMAP22(ii,jj)+noise;
+        else
+            DMap(ii,jj) = PLMAP2(ii,jj)./PLMAP1(ii,jj)+noise;
+            OMap(ii,jj) = PLMAP22(ii,jj)./PLMAP11(ii,jj)+noise;
         end
     end
 end
