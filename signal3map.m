@@ -128,6 +128,7 @@ pcolor(xI, yI,10*log10(abs(PLMAP2).^2)); shading flat;
 colorbar
 figure(3);
 pcolor(xI, yI,10*log10(abs(DMap))); shading flat;
+caxis([10 40])
 colorbar
 figure(4);
 pcolor(xI, yI,10*log10(abs(PLMAP11).^2)); shading flat;
